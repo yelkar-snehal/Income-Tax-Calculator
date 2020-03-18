@@ -1,2 +1,1 @@
-# Income-Tax-Calculator
-Income Tax Calculator
+**A React application for income tax calculation**
