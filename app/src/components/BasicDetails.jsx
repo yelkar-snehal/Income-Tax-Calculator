@@ -6,6 +6,7 @@ import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
+import { useHistory } from 'react-router-dom';
 
 // material ui styles
 const useStyles = makeStyles(theme => ({
@@ -38,6 +39,7 @@ export const BasicDetails = (props) => {
     const [birthdate, setBirthdate] = useState(new Date());
     const [age, setAge] = useState(0);
     const [grossIncome, setGrossIncome] = useState(null)
+    const history = useHistory();
 
     const handleChange = (date) => {
         setBirthdate(date);
@@ -159,6 +161,7 @@ export const BasicDetails = (props) => {
                                     color="primary"
                                     size="medium"
                                     className={classes.next}
+                                    onClick={() => history.push('/exemption')}
                                 >
                                     Next
                                 </Button>
