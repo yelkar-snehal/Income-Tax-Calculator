@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react';
-import { CssBaseline, Container, Grid, TextField, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Fragment, useState } from 'react'
+import { CssBaseline, Container, Grid, TextField, Button } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
 // material ui styles
 const useStyles = makeStyles(theme => ({
@@ -20,18 +20,18 @@ const useStyles = makeStyles(theme => ({
     next: {
         marginTop: theme.spacing(3),
     },
-}));
+}))
 
 
 
 export const Exemption = (props) => {
-    const classes = useStyles();
+    const classes = useStyles()
 
-    const [city, setCity] = useState("Mumbai");
-    const [rent, setRent] = useState("");
-    const [basicSalary, setBasicSalary] = useState("");
-    const [da, setDA] = useState("");
-    const [hraReceived, setHRAReceived] = useState("");
+    const [city, setCity] = useState("Mumbai")
+    const [rent, setRent] = useState("")
+    const [basicSalary, setBasicSalary] = useState("")
+    const [da, setDA] = useState("")
+    const [hraReceived, setHRAReceived] = useState("")
 
     const cities = [
         {
@@ -54,7 +54,7 @@ export const Exemption = (props) => {
             value: 'other',
             label: 'Other Non-metropolitian Cities'
         }
-    ];
+    ]
 
     return (
         <Fragment>
