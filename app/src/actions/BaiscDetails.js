@@ -10,7 +10,7 @@ import { SET_FIRST_NAME, SET_LAST_NAME, SET_PAN_NUMBER, SET_BIRTHDATE, SET_GROSS
  * 
  * @param {string} first name
  */
-export const getFirstName = (fname) => ({
+export const setFirstName = (fname) => ({
     type: SET_FIRST_NAME,
     fname
 })
@@ -19,7 +19,7 @@ export const getFirstName = (fname) => ({
  * 
  * @param {string} last name 
  */
-export const getLastName = (lname) => ({
+export const setLastName = (lname) => ({
     type: SET_LAST_NAME,
     lname
 })
@@ -28,7 +28,7 @@ export const getLastName = (lname) => ({
  * 
  * @param {string} panNumber 
  */
-export const getPanNumber = (panNumber) => ({
+export const setPanNumber = (panNumber) => ({
     type: SET_PAN_NUMBER,
     panNumber
 })
@@ -37,7 +37,7 @@ export const getPanNumber = (panNumber) => ({
  * 
  * @param {date} birthdate 
  */
-export const getBirthdat = (birthdate) => ({
+export const setBirthdate = (birthdate) => ({
     type: SET_BIRTHDATE,
     birthdate
 })
@@ -48,7 +48,7 @@ export const getBirthdat = (birthdate) => ({
  * datatype string is WIP
  * since number in js has an upper limit
  */
-export const getGrossIncome = (grossIncome) => ({
+export const setGrossIncome = (grossIncome) => ({
     type: SET_GROSS_INCOME,
     grossIncome
 })

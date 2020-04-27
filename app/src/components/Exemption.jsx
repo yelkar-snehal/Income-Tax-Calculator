@@ -146,6 +146,9 @@ export const Exemption = (props) => {
                                     color="primary"
                                     size="medium"
                                     className={classes.next}
+                                    onClick={() => {
+                                        console.log(props.fname, props.lname, props.panNumber, props.birthdate, props.grossIncome)
+                                    }}
                                 >
                                     Next
                                 </Button>

@@ -38,7 +38,7 @@ export const BasicDetails = (props) => {
     const [panNumber, setPanNumber] = useState("")
     const [birthdate, setBirthdate] = useState(new Date())
     const [age, setAge] = useState(0)
-    const [grossIncome, setGrossIncome] = useState(null)
+    const [grossIncome, setGrossIncome] = useState("")
 
     const history = useHistory()
 
@@ -162,7 +162,17 @@ export const BasicDetails = (props) => {
                                     color="primary"
                                     size="medium"
                                     className={classes.next}
-                                    onClick={() => history.push('/exemption')}
+                                    onClick={() => {
+                                        // invoke redux action creators with updated data
+                                        props.setFirstName(fname)
+                                        props.setLastName(lname)
+                                        props.setPanNumber(panNumber)
+                                        props.setBirthdate(birthdate)
+                                        props.setGrossIncome(grossIncome)
+
+                                        // route
+                                        history.push('/exemption')
+                                    }}
                                 >
                                     Next
                                 </Button>

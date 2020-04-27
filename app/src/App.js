@@ -4,19 +4,24 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 import './App.css'
-import { BasicDetails } from './components/BasicDetails'
-import { Exemption } from './components/Exemption'
+import BasicDetails from './containers/BasicDetails'
+import Exemption from './containers/Exemption'
+import { Provider } from 'react-redux';
+import store from "./redux/store"
+
 
 function App() {
   return (
-    <Router>
-      <Route exact path="/">
-        <BasicDetails></BasicDetails>
-      </Route>
-      <Route path="/exemption">
-        <Exemption></Exemption>
-      </Route>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Route exact path="/">
+          <BasicDetails></BasicDetails>
+        </Route>
+        <Route path="/exemption">
+          <Exemption></Exemption>
+        </Route>
+      </Router>
+    </Provider>
   )
 }
 
