@@ -1,12 +1,12 @@
-import React, { Fragment, useState } from 'react';
-import { CssBaseline, Container, Grid, TextField, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import DateFnsUtils from '@date-io/date-fns';
+import React, { Fragment, useState } from 'react'
+import { CssBaseline, Container, Grid, TextField, Button } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import DateFnsUtils from '@date-io/date-fns'
 import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker,
-} from '@material-ui/pickers';
-import { useHistory } from 'react-router-dom';
+} from '@material-ui/pickers'
+import { useHistory } from 'react-router-dom'
 
 // material ui styles
 const useStyles = makeStyles(theme => ({
@@ -26,36 +26,37 @@ const useStyles = makeStyles(theme => ({
     next: {
         marginTop: theme.spacing(3),
     },
-}));
+}))
 
 
 
 export const BasicDetails = (props) => {
-    const classes = useStyles();
+    const classes = useStyles()
 
-    const [fname, setFname] = useState("");
-    const [lname, setLname] = useState("");
-    const [panNumber, setPanNumber] = useState("");
-    const [birthdate, setBirthdate] = useState(new Date());
-    const [age, setAge] = useState(0);
-    const [grossIncome, setGrossIncome] = useState(null)
-    const history = useHistory();
+    const [fname, setFname] = useState("")
+    const [lname, setLname] = useState("")
+    const [panNumber, setPanNumber] = useState("")
+    const [birthdate, setBirthdate] = useState(new Date())
+    const [age, setAge] = useState(0)
+    const [grossIncome, setGrossIncome] = useState("")
+
+    const history = useHistory()
 
     const handleChange = (date) => {
-        setBirthdate(date);
-        let currAge = calculate_age(date);
-        setAge(currAge);
+        setBirthdate(date)
+        let currAge = calculate_age(date)
+        setAge(currAge)
     }
 
     const calculate_age = (dob) => {
-        let today = new Date();
-        let birthDate = new Date(dob);
-        let age_now = today.getFullYear() - birthDate.getFullYear();
-        let m = today.getMonth() - birthDate.getMonth();
+        let today = new Date()
+        let birthDate = new Date(dob)
+        let age_now = today.getFullYear() - birthDate.getFullYear()
+        let m = today.getMonth() - birthDate.getMonth()
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-            age_now--;
+            age_now--
         }
-        return age_now;
+        return age_now
     }
 
     return (
@@ -161,7 +162,17 @@ export const BasicDetails = (props) => {
                                     color="primary"
                                     size="medium"
                                     className={classes.next}
-                                    onClick={() => history.push('/exemption')}
+                                    onClick={() => {
+                                        // invoke redux action creators with updated data
+                                        props.setFirstName(fname)
+                                        props.setLastName(lname)
+                                        props.setPanNumber(panNumber)
+                                        props.setBirthdate(birthdate)
+                                        props.setGrossIncome(grossIncome)
+
+                                        // route
+                                        history.push('/exemption')
+                                    }}
                                 >
                                     Next
                                 </Button>
