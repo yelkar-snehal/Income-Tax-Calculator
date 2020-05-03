@@ -30,7 +30,7 @@ export const Exemption = (props) => {
     const [city, setCity] = useState("Mumbai")
     const [rent, setRent] = useState("")
     const [basicSalary, setBasicSalary] = useState("")
-    const [da, setDA] = useState("")
+    const [DA, setDA] = useState("")
     const [hraReceived, setHRAReceived] = useState("")
 
     const cities = [
@@ -101,13 +101,13 @@ export const Exemption = (props) => {
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField
-                                    name="da"
-                                    id="da"
+                                    name="DA"
+                                    id="DA"
                                     label="Dearness Allowances"
                                     variant="outlined"
                                     fullWidth
-                                    autoComplete="da"
-                                    value={da}
+                                    autoComplete="DA"
+                                    value={DA}
                                     helperText="Dearness Allowance (DA) is a calculation on inflation and allowance paid to government employees, public sector employees (PSE) and pensioners."
                                     onChange={(event) => setDA(event.target.value)} />
                             </Grid>
@@ -130,7 +130,6 @@ export const Exemption = (props) => {
                                     label="HRA Received"
                                     variant="outlined"
                                     fullWidth
-                                    required
                                     autoComplete="hraReceived"
                                     value={hraReceived}
                                     helperText="House Rent Allowance is a part of the salary provided by an employer to his employee for his rented accommodation."
@@ -147,7 +146,12 @@ export const Exemption = (props) => {
                                     size="medium"
                                     className={classes.next}
                                     onClick={() => {
-                                        console.log(props.fname, props.lname, props.panNumber, props.birthdate, props.grossIncome)
+                                        // console.log(props.fname, props.lname, props.panNumber, props.birthdate, props.grossIncome)
+                                        props.setCity(city)
+                                        props.setRent(rent)
+                                        props.setBasicSalary(basicSalary)
+                                        props.setDA(DA)
+                                        props.setHRAReceived(hraReceived)
                                     }}
                                 >
                                     Next

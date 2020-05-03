@@ -4,6 +4,7 @@
 // by the action creator
 // and payload updated by the same
 
+
 import { SET_FIRST_NAME, SET_LAST_NAME, SET_PAN_NUMBER, SET_BIRTHDATE, SET_GROSS_INCOME } from "../actions/actions";
 
 
